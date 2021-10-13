@@ -1,0 +1,23 @@
+<form action="/users/signup" method="POST">
+    <select name="city">
+        <option value="Paris">Paris</option>
+        <option value="Tokyo">Tokyo</option>
+        <option value="Los Angeles">Los Angeles</option>
+    </select>
+    <input type="text" placeholder="Votre pseudo" name="username">
+    <input type="password" placeholder="Votre mot de passe" name="password">
+    <button type="submit">Envoyer</button>
+</form>
+<h2>{{title}}</h2>
+{{#if user}}
+    <p>Bienvenu {{user.username}} ! Vous avez l'id: {{user._id}}</p>
+{{/if}}
+<ul>
+    {{#each users}}
+        <li>
+            <a href="/users/username/{{this.username}}">
+                <strong>{{this.username}}</strong>: {{this.city}}
+            </a>
+        </li>
+    {{/each}}
+</ul>

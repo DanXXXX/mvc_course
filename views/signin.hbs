@@ -1,0 +1,10 @@
+<h1>Connexion</h1>
+<form action="/users/signin" method="POST">
+    <input type="text" placeholder="Votre pseudo" name="username">
+    <input type="password" placeholder="Votre mot de passe" name="password">
+    <button type="submit">Envoyer</button>
+</form>
+{{#if user}}
+    <p>Bienvenu {{user.username}} ! Vous avez l'id: {{user._id}}</p>
+    <p>Vous êtes connecté !</p>
+{{/if}}
